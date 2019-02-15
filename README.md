@@ -24,4 +24,5 @@ A game to let children or adults to learn how to spell.
 ## Members
 [Anton Strand](https://github.com/AntonStrand)<br>
 [Emil Larsson](https://github.com/Elmona)<br>
+[Madelene Amberman](https://github.com/Maddis87)<br>
  **Add your name and link to your github account here**
