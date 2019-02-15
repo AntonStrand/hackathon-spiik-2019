@@ -19,7 +19,7 @@ A game to let children or adults to learn how to spell.
 - Ha en timer.
 
 ## Other project ideas
-- 
+- Lära barn om pengar
 
 ## Members
 [Andreas Johansson](https://github.com/Andreas1990)<br>
