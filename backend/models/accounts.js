@@ -33,7 +33,7 @@ const accountSchema = new Schema({
     type: String,
     required: 'Email is required.'
   },
-  children: [ ObjectId ]
+  children: [ String ]
 })
 
 /**
