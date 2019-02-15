@@ -1,5 +1,5 @@
 const router = require('express').Router()
-const child = require('../models/children')
+const childModel = require('../models/children')
 
 router.get('/', (req, res) => {
   res.json('this is user')
@@ -22,9 +22,9 @@ router.post('/:userId/children', (req, res) => {
   const body = req.body
   const childName = body.childName
 
-  const fooBar = new child({ name: childName, parentID: userId, saldo: 0 })
+  const child = new childModel({ name: childName, parentID: userId, saldo: 0 })
 
-  fooBar.save().then(() => {
+  child.save().then(() => {
     res.send()
   })
 })
