@@ -3,10 +3,11 @@ require('dotenv').config()
 
 const secret = process.env.JWT
 
-const sign = username => {
+const sign = (username, id) => {
   return new Promise((resolve, reject) => {
     jwt.sign({
-      user: username
+      username,
+      id
     }, secret, { expiresIn: '2 hours' },
     (err, token) => {
       if (err) return reject(err)

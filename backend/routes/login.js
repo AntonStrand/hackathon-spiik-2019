@@ -16,6 +16,7 @@ router.post('/', (req, res) => {
         res.json({ error: 'Invalid username or password' })
       } else {
         const dbPassword = data.password
+        const id = data._id
 
         bcrypt.compare(password, dbPassword, (err, result) => {
           if (err) {
@@ -23,7 +24,7 @@ router.post('/', (req, res) => {
             res.json('Invalid username or password')
           }
           if (result) {
-            jwt.sign(username)
+            jwt.sign(username, id)
               .then(token => res.json({ token: token }))
           }
         })
