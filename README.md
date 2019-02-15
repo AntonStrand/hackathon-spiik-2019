@@ -23,7 +23,7 @@ A game to let children or adults to learn how to spell.
 
 ## Members
 [Andreas Johansson](https://github.com/PLACE_HOLDER)<br>
+[Anton Strand](https://github.com/AntonStrand)<br>	[Anton Strand](https://github.com/AntonStrand)<br>
+[Emil Larsson](https://github.com/Elmona)<br>	[Emil Larsson](https://github.com/Elmona)<br>
+[Madelene Amberman](https://github.com/Maddis87)<br>	[Madelene Amberman](https://github.com/Maddis87)<br>
 [William Robertson](https://github.com/PLACE_HOLDER)<br>
-[![Anton Strand](https://avatars1.githubusercontent.com/u/1257305?s=64&v=4)](https://github.com/AntonStrand)
-[![Emil Larsson](https://avatars3.githubusercontent.com/u/20845824?s=64&v=4)](https://github.com/Elmona)
-[![Madelene Amberman](https://avatars1.githubusercontent.com/u/28715649?s=460&v=4)](https://github.com/Maddis87)
