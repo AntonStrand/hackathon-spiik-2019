@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import MoneyArea from './MoneyArea'
 import TitleAmountPair from './TitleAmountPair'
 import styled from 'styled-components'
@@ -11,14 +11,23 @@ const BoxContainer = styled.div`
   height: 90vh;
 `
 
-const SaldoPage = ({ shopItems }) => (
-  <div>
+const SaldoPage = ({ shopItems }) => {
+  const [money, setMoney] = useState(20)
+  const [register, setRegister] = useState(10)
+  const moveMoney = moveFromRegister => amount => {
+    if (moveFromRegister) {
+      amount = amount * -1
+    }
+    setMoney(money - amount)
+    setRegister(register + amount)
+  }
+  return (<div>
     <BoxContainer>
-      <MoneyArea title="Dina pengar" amount="20" />
-      <MoneyArea title="Pengar att spendera" amount="10" />
+      <MoneyArea title="Dina pengar" amount={money} onMoveMoney={moveMoney(false)} />
+      <MoneyArea title="Pengar att spendera" amount={register} onMoveMoney={moveMoney(true)}/>
     </BoxContainer>
     <Button>KÖP</Button>
-  </div>
-)
+  </div>)
+}
 
 export default SaldoPage

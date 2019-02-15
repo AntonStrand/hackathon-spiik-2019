@@ -8,10 +8,10 @@ const Container = styled.span`
   margin: 1em;
 `
 
-const MoneyArea = ({ title, amount }) => (
+const MoneyArea = ({ title, amount, onMoveMoney }) => (
   <Container>
     <h2>{title}</h2>
-    <MoneyBox />
+    <MoneyBox amount={amount} onMoveMoney={onMoveMoney} />
     <div>
       <TitleAmountPair title={title} amount={amount + ' kr'} />
     </div>

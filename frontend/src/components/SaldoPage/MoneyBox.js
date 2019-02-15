@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 
 import Coin from './money/Coin'
-import Bill from './money/Bill'
+// import Bill from './money/Bill'
 
 const Container = styled.div`
   background: #eee;
@@ -17,34 +17,10 @@ const CoinArea = styled.div`
   text-align: left;
 `
 
-const MoneyBox = ({ amount }) => (
+const MoneyBox = ({ amount, onMoveMoney }) => (
   <Container>
     <CoinArea>
-      <Coin>1</Coin>
-      <Coin>1</Coin>
-      <Coin>1</Coin>
-      <Coin>1</Coin>
-      <Coin>1</Coin>
-      <Coin>1</Coin>
-      <Coin>1</Coin>
-      <Coin>1</Coin>
-      <Coin>5</Coin>
-      <Coin>5</Coin>
-      <Coin>5</Coin>
-      <Coin>5</Coin>
-      <Coin>10</Coin>
-      <Coin>10</Coin>
-      <Coin>10</Coin>
-      <Coin>10</Coin>
-      <Bill>20</Bill>
-      <Bill>20</Bill>
-      <Bill>20</Bill>
-      <Bill>20</Bill>
-      <Bill>20</Bill>
-      <Bill>50</Bill>
-      <Bill>50</Bill>
-      <Bill>100</Bill>
-      <Bill>200</Bill>
+      { Array(amount).fill(1).map(() => <Coin key={Math.random()} onClick={() => onMoveMoney(1)}>1</Coin>) }
     </CoinArea>
   </Container>
 )
