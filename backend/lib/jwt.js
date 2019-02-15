@@ -3,15 +3,6 @@ require('dotenv').config()
 
 const secret = process.env.JWT
 
-const verify = token => {
-  return new Promise((resolve, reject) => {
-    jwt.verify(token, secret, (err, decoded) => {
-      if (err) return reject(err)
-      if (decoded) return resolve(decoded.user)
-    })
-  })
-}
-
 const sign = username => {
   return new Promise((resolve, reject) => {
     jwt.sign({
@@ -25,6 +16,5 @@ const sign = username => {
 }
 
 module.exports = {
-  verify,
   sign
 }
