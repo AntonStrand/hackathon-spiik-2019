@@ -2,10 +2,19 @@
   "name": "backend",
   "version": "1.0.0",
   "description": "Backend for hackathon spiik 2019",
-  "main": "app.js",
+  "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
   "author": "MAAWE",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.4",
+    "mongoose": "^5.4.12",
+    "node-env": "^0.1.6"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.10"
+  }
 }
