@@ -1,7 +1,7 @@
 const passportJwt = require('passport-jwt')
 const dotenv = require('dotenv')
 
-dotenv.config
+dotenv.config()
 
 const ExtractJWT = passportJwt.ExtractJwt
 const Strategy = passportJwt.Strategy
