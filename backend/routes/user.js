@@ -6,8 +6,6 @@ router.get('/', (req, res) => {
 })
 
 router.get('/children', (req, res) => {
-  const userId = req.params.userId
-
   console.log(userId + ' these are my children')
 })
 
