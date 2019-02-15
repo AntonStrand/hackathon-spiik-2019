@@ -21,11 +21,14 @@ const childrenSchema = new Schema({
     required: 'Username is required.',
     validate: [validateName, '\nUsername may only contain numbers, lowercase and uppercase letters.\nIt must be between 3 to 10 characters long.'],
   },
-  parrentID: [ ObjectId ],
+  parentID: {
+    type: String,
+    required: 'Parent name is required'
+  },
   saldo: Number
 })
 
-const childrenSchema = mongoose.model('user', accountSchema)
+const child = mongoose.model('Child', childrenSchema)
 
-module.exports = User
+module.exports = child
 
