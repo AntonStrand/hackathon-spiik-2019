@@ -5,7 +5,7 @@ router.get('/', (req, res) => {
 })
 
 router.get('/:childId', (req, res) => {
-  const childId = req.param.childID
+  const childId = req.params.childId
 
   console.log(childId)
 })
