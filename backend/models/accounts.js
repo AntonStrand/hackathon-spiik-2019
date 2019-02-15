@@ -14,12 +14,12 @@ const saltRounds = 10
  */
 const validateName = str => /^[a-zA-Z-0-9_åÅäÄöÖ]{3,30}$/.test(str)
 
-const userSchema = new Schema({
+const accountSchema = new Schema({
   date: {
     type: Date,
     default: Date.now
   },
-  username: {
+  name: {
     type: String,
     required: 'Username is required.',
     validate: [validateName, '\nUsername may only contain numbers, lowercase and uppercase letters.\nIt must be between 3 to 10 characters long.'],
@@ -33,15 +33,13 @@ const userSchema = new Schema({
     type: String,
     required: 'Email is required.'
   },
-  children: [{
-    name: String
-  }]
+  children: [ ObjectId ]
 })
 
 /**
  * Middleware to hash password before saving them to database.
  */
-userSchema.pre('save', function (next) {
+accountSchema.pre('save', function (next) {
   // Only hash if the password has been modified or is new.
   if (!this.isModified('password')) return next()
   bcrypt.genSalt(saltRounds)
@@ -53,7 +51,7 @@ userSchema.pre('save', function (next) {
     .catch(e => console.log(e))
 })
 
-const User = mongoose.model('user', userSchema)
+const User = mongoose.model('user', accountSchema)
 
 module.exports = User
 
