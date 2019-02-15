@@ -1,6 +1,7 @@
 const router = require('express').Router()
-const index = require('./routes/index')
 
-router.use('/', index)
+router.get('/', (req, res) => {
+  res.json('this is user')
+})
 
 module.exports = router
