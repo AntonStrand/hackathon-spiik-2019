@@ -22,7 +22,7 @@ A game to let children or adults to learn how to spell.
 - 
 
 ## Members
-[Andreas Johansson](https://github.com/PLACE_HOLDER)<br>
+[Andreas Johansson](https://github.com/Andreas1990)<br>
 [Anton Strand](https://github.com/AntonStrand)<br>
 [Emil Larsson](https://github.com/Elmona)<br>
 [Madelene Amberman](https://github.com/Maddis87)<br>
