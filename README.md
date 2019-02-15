@@ -18,6 +18,9 @@ A game to let children or adults to learn how to spell.
 - Bestämma maxlängd på orden.
 - Ha en timer.
 
+## Other project ideas
+- 
+
 ## Members
 [Anton Strand](https://github.com/AntonStrand)<br>
 [Emil Larsson](https://github.com/Elmona)<br>
