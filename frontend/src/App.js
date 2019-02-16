@@ -4,6 +4,7 @@ import './App.css'
 import Appbar from './components/Appbar/Appbar'
 import SaldoPage from './components/SaldoPage/'
 import LoginPage from './components/LoginPage/LoginPage'
+import WelcomePage from './components/WelcomePage/welcomePage'
 
 class App extends Component {
   render() {
@@ -18,6 +19,7 @@ class App extends Component {
           }
         />
         <Route path="/login" component={LoginPage} />
+        <Route path="/welcome" component={WelcomePage} />
       </div>
     )
   }
