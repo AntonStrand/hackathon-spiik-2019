@@ -19,24 +19,21 @@ const CoinArea = styled.div`
   text-align: left;
 `
 
-const MoneyBox = ({ moneyList, onMoveMoney }) => {
-  console.log(moneyList)
-  return (
-    <Container>
-      <CoinArea>
-        {moneyList
-          .sort((a, b) => a - b)
-          .map(m => {
-            const Denomination = denomination(m)
-            return (
-              <Denomination key={Math.random()} onClick={() => onMoveMoney(m)}>
-                {m}
-              </Denomination>
-            )
-          })}
-      </CoinArea>
-    </Container>
-  )
-}
+const MoneyBox = ({ moneyList, onMoveMoney }) => (
+  <Container>
+    <CoinArea>
+      {moneyList
+        .sort((a, b) => a - b)
+        .map(m => {
+          const Denomination = denomination(m)
+          return (
+            <Denomination key={Math.random()} onClick={() => onMoveMoney(m)}>
+              {m}
+            </Denomination>
+          )
+        })}
+    </CoinArea>
+  </Container>
+)
 
 export default MoneyBox
