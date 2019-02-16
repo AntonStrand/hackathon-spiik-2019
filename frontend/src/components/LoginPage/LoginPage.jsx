@@ -19,14 +19,39 @@ class LoginPage extends React.Component {
     this.setState({ value })
   }
 
+  handleInputChange = name => event => {
+    this.setState({ [name]: event.target.value })
+  }
+
+  signup = () => {
+    fetch('/api/user', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ username: '', password: '', email: '' })
+    }).then()
+  }
+
   login = () => {
     return (
       <div style={this.style.parentDiv}>
         <div>
-          <TextField label="Name" />
-          <TextField label="Password" />
+          <TextField
+            value={this.state.name}
+            onChange={this.handleInputChange('name')}
+            label="Name"
+          />
+          <TextField
+            onChange={this.handleInputChange('password')}
+            value={this.state.password}
+            label="Password"
+            type="password"
+          />
         </div>
-        <Button variant="contained">Login</Button>
+        <Button variant="contained" onClick={this.signup()}>
+          Login
+        </Button>
       </div>
     )
   }
@@ -35,9 +60,22 @@ class LoginPage extends React.Component {
     return (
       <div style={this.style.parentDiv}>
         <div>
-          <TextField label="Email" />
-          <TextField label="Name" />
-          <TextField label="Password" />
+          <TextField
+            value={this.state.email}
+            onChange={this.handleInputChange('email')}
+            label="Email"
+          />
+          <TextField
+            value={this.state.name}
+            onChange={this.handleInputChange('name')}
+            label="Name"
+          />
+          <TextField
+            value={this.state.password}
+            onChange={this.handleInputChange('password')}
+            type="password"
+            label="Password"
+          />
         </div>
         <Button variant="contained">Register</Button>
       </div>
