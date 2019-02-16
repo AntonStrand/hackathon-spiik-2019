@@ -1,11 +1,10 @@
 import React from 'react'
 import styled from 'styled-components'
-import convertAmountToMoney from './model/amountConverter'
 
 import Coin from './money/Coin'
 import Bill from './money/Bill'
 
-const denomination = (sum) => sum > 10 ? Bill : Coin
+const denomination = sum => (sum > 10 ? Bill : Coin)
 
 const Container = styled.div`
   background: #eee;
@@ -20,18 +19,24 @@ const CoinArea = styled.div`
   text-align: left;
 `
 
-const MoneyBox = ({ amount, onMoveMoney }) => {
-  const money = convertAmountToMoney(amount)
-  return <Container>
-    <CoinArea>
-      { money.map(m => {
-        const Denomination = denomination(m);
-        return <Denomination
-          key={Math.random()}
-          onClick={() => onMoveMoney(m)}>{m}</Denomination>})
-      }
-    </CoinArea>
-  </Container>
+const MoneyBox = ({ moneyList, onMoveMoney }) => {
+  console.log(moneyList)
+  return (
+    <Container>
+      <CoinArea>
+        {moneyList
+          .sort((a, b) => a - b)
+          .map(m => {
+            const Denomination = denomination(m)
+            return (
+              <Denomination key={Math.random()} onClick={() => onMoveMoney(m)}>
+                {m}
+              </Denomination>
+            )
+          })}
+      </CoinArea>
+    </Container>
+  )
 }
 
 export default MoneyBox
