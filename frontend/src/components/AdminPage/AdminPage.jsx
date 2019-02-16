@@ -4,7 +4,6 @@ import Button from '@material-ui/core/Button'
 import TextField from '@material-ui/core/TextField';
 import { withRouter } from 'react-router-dom'
 import { Link } from 'react-router'
-
 const Row = ({child, onUpdateSaldo, history}) => {
   const [amount, setAmount] = useState()
   return (<div style={{ display: 'flex', flexDirection: 'row', marginTop: '28px', justifyContent: 'space-around'}}>
@@ -22,7 +21,10 @@ const Row = ({child, onUpdateSaldo, history}) => {
         }}
         variant='contained'>Update saldo</Button></div>
       <div><Button variant='contained'
-        onClick={() => history.push('/wallet')} 
+        onClick={() => history.push({
+          pathname: '/',
+          state: {childId: child._id, name: child.name, amount: amount}
+        })} 
       >View wallet</Button></div>
     </div>)
 }

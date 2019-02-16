@@ -11,9 +11,9 @@ class App extends Component {
     return (
       <div className="App">
         <Appbar />
-        <Route exact path="/wallet" component={SaldoPage} />
+        <Route exact path="/" component={SaldoPage} />
         <Route path="/login" component={LoginPage} />
-        <Route path="/" component={AdminPage} />
+        <Route path="/admin" component={AdminPage} />
       </div>
     )
   }
