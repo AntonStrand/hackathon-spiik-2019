@@ -29,7 +29,11 @@ class LoginPage extends React.Component {
       headers: {
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify({ username: this.state.name, password: this.state.password, email: this.state.email })
+      body: JSON.stringify({
+        username: this.state.name,
+        password: this.state.password,
+        email: this.state.email
+      })
     }).then(apiRes => console.log(apiRes))
   }
 
@@ -39,7 +43,10 @@ class LoginPage extends React.Component {
       headers: {
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify({ username: this.state.name, password: this.state.password,})
+      body: JSON.stringify({
+        username: this.state.name,
+        password: this.state.password
+      })
     }).then(apiRes => console.log(apiRes))
   }
 
@@ -59,7 +66,7 @@ class LoginPage extends React.Component {
             type="password"
           />
         </div>
-        <Button variant="contained">
+        <Button onClick={() => this.loginUser()} variant="contained">
           Login
         </Button>
       </div>
