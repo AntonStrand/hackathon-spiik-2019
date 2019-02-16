@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import MoneyArea from './MoneyArea'
 import styled from 'styled-components'
-import Button from '../form/Button'
+import Button from '@material-ui/core/Button'
 
 import convertAmountToMoney from './model/amountConverter'
 
@@ -9,7 +9,7 @@ const BoxContainer = styled.div`
   width: 100vw;
   display: flex;
   flex-direction: row;
-  height: 90vh;
+  height: 80vh;
 `
 
 const removeFrom = (xs, item) => {
@@ -43,7 +43,14 @@ const SaldoPage = () => {
           onMoveMoney={moveMoney(true)}
         />
       </BoxContainer>
-      <Button>KÖP</Button>
+      <Button
+        disabled={!register.length}
+        variant="contained"
+        color="primary"
+        style={{ fontSize: '1.2em' }}
+      >
+        GENOMFÖR TRANSAKTION
+      </Button>
     </div>
   )
 }
