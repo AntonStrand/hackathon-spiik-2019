@@ -23,14 +23,24 @@ class LoginPage extends React.Component {
     this.setState({ [name]: event.target.value })
   }
 
-  signup = () => {
+  registerUser = () => {
     fetch('/api/user', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify({ username: '', password: '', email: '' })
-    }).then()
+      body: JSON.stringify({ username: this.state.name, password: this.state.password, email: this.state.email })
+    }).then(apiRes => console.log(apiRes))
+  }
+
+  loginUser = () => {
+    fetch('/api/login', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ username: this.state.name, password: this.state.password,})
+    }).then(apiRes => console.log(apiRes))
   }
 
   login = () => {
@@ -49,7 +59,7 @@ class LoginPage extends React.Component {
             type="password"
           />
         </div>
-        <Button variant="contained" onClick={this.signup()}>
+        <Button variant="contained">
           Login
         </Button>
       </div>
@@ -77,7 +87,9 @@ class LoginPage extends React.Component {
             label="Password"
           />
         </div>
-        <Button variant="contained">Register</Button>
+        <Button onClick={this.registerUser()} variant="contained">
+          Register
+        </Button>
       </div>
     )
   }
