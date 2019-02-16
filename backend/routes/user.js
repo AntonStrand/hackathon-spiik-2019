@@ -31,8 +31,8 @@ router.post('/', (req, res) => {
 })
 
 router.get('/children', passportJWT, (req, res) => {
-  const {id} = req.user
-  Accounts.findOne({_id: id}).then(data => {
+  const { id } = req.user
+  Accounts.findOne({ _id: id }).then(data => {
     const result = data.children.map(child => {
       console.log(child)
       return ChildModel.findOne({ _id: child })
@@ -51,7 +51,7 @@ router.post('/children', passportJWT, (req, res) => {
     new ChildModel({ name: childName, parentID: id, saldo: 0 })
       .save().then(data => {
         const { _id } = data
-        return Accounts.findOneAndUpdate({ _id: id }, {$addToSet: { children: _id }})
+        return Accounts.findOneAndUpdate({ _id: id }, { $addToSet: { children: _id } })
       }).then(data => {
         res.send('Child added!')
       })
