@@ -11,7 +11,7 @@ const BoxContainer = styled.div`
 `
 
 const SaldoPage = ({ shopItems }) => {
-  const [money, setMoney] = useState(20)
+  const [money, setMoney] = useState(2000)
   const [register, setRegister] = useState(10)
   const moveMoney = moveFromRegister => amount => {
     if (moveFromRegister) {

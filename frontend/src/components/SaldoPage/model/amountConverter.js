@@ -7,7 +7,7 @@ const sum = xs => xs.reduce((acc, n) => acc + n, 0)
 // addOnes :: (Number, [Number], Number) -> [Number]
 const addOnes = (amount, coins, max = Infinity) => {
   const numOfOnes = amount - sum(coins)
-  coins.concat(ones(numOfOnes > max ? max : numOfOnes))
+  return coins.concat(ones(numOfOnes > max ? max : numOfOnes))
 }
 
 const values = [1000, 500, 200, 100, 50, 20, 10, 5, 2, 1]
