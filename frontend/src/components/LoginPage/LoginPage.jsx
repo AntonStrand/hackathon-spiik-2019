@@ -47,7 +47,15 @@ class LoginPage extends React.Component {
         username: this.state.name,
         password: this.state.password
       })
-    }).then(apiRes => console.log(apiRes))
+    })
+      .then(apiRes => {
+        if (apiRes.ok) {
+          return apiRes.json()
+        }
+      })
+      .then(token => {
+        localStorage.setItem('token', token.token)
+      })
   }
 
   login = () => {
