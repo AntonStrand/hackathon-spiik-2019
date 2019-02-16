@@ -2,8 +2,10 @@ import React, { useState } from 'react'
 import MoneyArea from './MoneyArea'
 import styled from 'styled-components'
 import Button from '@material-ui/core/Button'
+import { withRouter } from 'react-router-dom'
 
 import convertAmountToMoney from './model/amountConverter'
+import saveToWallet from './model/saveToWallet'
 
 const BoxContainer = styled.div`
   width: 100vw;
@@ -19,7 +21,7 @@ const removeFrom = (xs, item) => {
 
 const addGenetive = name => (name[name.length - 1] === 's' ? name : name + 's')
 
-const SaldoPage = ({ childID, name, amount }) => {
+const SaldoPage = ({ childID, name, amount, history }) => {
   const [money, setMoney] = useState(convertAmountToMoney(amount))
   const [register, setRegister] = useState([])
   const moveMoney = moveFromRegister => amount => {
@@ -50,6 +52,12 @@ const SaldoPage = ({ childID, name, amount }) => {
         variant="contained"
         color="primary"
         style={{ fontSize: '1.2em' }}
+        onClick={() =>
+          saveToWallet(childID, amount).fork(
+            () => history.push('/login'), // If error redirect to login
+            () => history.push('/admin') // else redirect to admin page
+          )
+        }
       >
         GENOMFÖR TRANSAKTION
       </Button>
@@ -57,4 +65,4 @@ const SaldoPage = ({ childID, name, amount }) => {
   )
 }
 
-export default SaldoPage
+export default withRouter(SaldoPage)
