@@ -1,6 +1,5 @@
 import React from 'react'
 import styled from 'styled-components'
-import convertAmountToMoney from './model/amountConverter'
 
 import Coin from './money/Coin'
 import Bill from './money/Bill'
@@ -20,12 +19,12 @@ const CoinArea = styled.div`
   text-align: left;
 `
 
-const MoneyBox = ({ amount, onMoveMoney }) => {
-  const money = convertAmountToMoney(amount)
+const MoneyBox = ({ moneyList, onMoveMoney }) => {
+  console.log(moneyList)
   return (
     <Container>
       <CoinArea>
-        {money
+        {moneyList
           .sort((a, b) => a - b)
           .map(m => {
             const Denomination = denomination(m)
