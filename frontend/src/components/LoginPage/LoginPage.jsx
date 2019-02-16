@@ -87,7 +87,7 @@ class LoginPage extends React.Component {
             label="Password"
           />
         </div>
-        <Button onClick={this.registerUser()} variant="contained">
+        <Button onClick={() => this.registerUser()} variant="contained">
           Register
         </Button>
       </div>
