@@ -20,7 +20,6 @@ const removeFrom = (xs, item) => {
 const addGenetive = name => (name[name.length - 1] === 's' ? name : name + 's')
 
 const SaldoPage = ({ childID, name, amount }) => {
-  console.log(name, amount)
   const [money, setMoney] = useState(convertAmountToMoney(amount))
   const [register, setRegister] = useState([])
   const moveMoney = moveFromRegister => amount => {
