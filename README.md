@@ -19,8 +19,8 @@ This will render a screen where the total amount of saving is shown in one box w
 This will bring a more aware approach to spending money by visually presenting bills and coins instead of watching a plastic card pay for everything.
 
 ## Stack
-- Frontend - React
-- Backend - Javascript, with Express
+- Frontend - Javascript with React using create-react-app
+- Backend - Javascript with Express
 - Database - MLab, NoSQL 
 
 ## Members
