@@ -1,6 +1,9 @@
 const router = require('express').Router()
 const Accounts = require('../models/accounts')
-const childModel = require('../models/children')
+const ChildModel = require('../models/children')
+
+const passport = require('passport')
+const passportJWT = passport.authenticate('jwt', { session: false })
 
 router.get('/', (req, res) => {
   res.json('this is user')
@@ -27,10 +30,12 @@ router.post('/', (req, res) => {
     })
 })
 
-router.get('/children', (req, res) => {
+router.get('/children', passportJWT, (req, res) => {
+  console.log('sdlfkjsd')
   const userId = req.params.userId
 
   console.log(userId + ' these are my children')
+  res.send('wohooo')
 })
 
 router.post('/children', (req, res) => {
@@ -38,7 +43,7 @@ router.post('/children', (req, res) => {
   const body = req.body
   const childName = body.childName
 
-  const child = new childModel({ name: childName, parentID: userId, saldo: 0 })
+  const child = new ChildModel({ name: childName, parentID: userId, saldo: 0 })
 
   child.save().then(() => {
     res.send()
