@@ -1,31 +1,23 @@
 const router = require('express').Router()
+const ChildModel = require('../models/children')
 
-router.get('/', (req, res) => {
-  res.json('this is child')
-})
-
-router.get('/:childId', (req, res) => {
+router.post('/:childId', (req, res) => {
   const childId = req.params.childId
+  const { saldo } = req.body
 
-  console.log(childId)
-})
+  // TODO: Check if parrent have access to child
 
-router.get('/:childId/wallet', (req, res) => {
-  const childId = req.params.childId
-
-  console.log(childId)
-})
-
-router.get('/:childId/wishlist', (req, res) => {
-  const childId = req.params.childId
-
-  console.log(childId)
-})
-
-router.get('/:childId/history', (req, res) => {
-  const childId = req.params.childId
-
-  console.log(childId)
+  if (!saldo) {
+    res.json({ error: 'You need to submit amount as new saldo' })
+  } else {
+    ChildModel.findOneAndUpdate({ _id: childId }, { saldo })
+      .then(data => {
+        res.json({ result: 'Done, your kid have a lot of money now!' })
+      }).catch(e => {
+        console.log(e)
+        res.json({ error: 'Unknown error' })
+      })
+  }
 })
 
 module.exports = router
