@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import MoneyArea from './MoneyArea'
-import TitleAmountPair from './TitleAmountPair'
 import styled from 'styled-components'
 import Button from '../form/Button'
 
