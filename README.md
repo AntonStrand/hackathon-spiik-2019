@@ -26,4 +26,5 @@ A game to let children or adults to learn how to spell.
 [Anton Strand](https://github.com/AntonStrand)<br>
 [Emil Larsson](https://github.com/Elmona)<br>
 [Madelene Amberman](https://github.com/Maddis87)<br>
+[Victor Olsson](https://github.com/victor--)
 [William Robertson](https://github.com/wirob)<br>
