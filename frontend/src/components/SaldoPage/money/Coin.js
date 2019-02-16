@@ -3,7 +3,7 @@ import styled from 'styled-components'
 // prettier-ignore
 // getBackgroundColor :: Props -> HexCode
 const getBackgroundColor = ({ children: value }) =>
-  value === 1 ? '#FFC9A2'
+  value === 1 ? '#FFDDC5'
   : value === 2 ? '#FFECA2'
   : value === 5 ? '#FFDFA2'
   : /* otherwise */ '#fff1d8'
@@ -19,6 +19,12 @@ const getTextColor = ({ children: value }) =>
 const Coin = styled.div`
   user-select: none;
   background: ${getBackgroundColor};
+  background-image: linear-gradient(
+    -20deg,
+    rgba(255, 255, 255, 0),
+    rgba(255, 255, 255, 0.6),
+    rgba(255, 255, 255, 0)
+  );
   border-radius: 50%;
   border: 1px dashed #ffe09f;
   text-align: center;
