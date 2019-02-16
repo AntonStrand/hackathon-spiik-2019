@@ -33,3 +33,4 @@ const convertAmountToMoney = amount =>
   : /* else */ [...addOnes(amount, [20, 20, 20, 10, 5], 15), ...getCoins(amount - 90)]
 
 export default convertAmountToMoney
+export { sum }
