@@ -17,8 +17,11 @@ const removeFrom = (xs, item) => {
   return idx >= 0 ? [...xs.slice(0, idx), ...xs.slice(idx + 1)] : xs
 }
 
-const SaldoPage = () => {
-  const [money, setMoney] = useState(convertAmountToMoney(2000))
+const addGenetive = name => (name[name.length - 1] === 's' ? name : name + 's')
+
+const SaldoPage = ({ childID, name, amount }) => {
+  console.log(name, amount)
+  const [money, setMoney] = useState(convertAmountToMoney(amount))
   const [register, setRegister] = useState([])
   const moveMoney = moveFromRegister => amount => {
     if (moveFromRegister) {
@@ -33,7 +36,7 @@ const SaldoPage = () => {
     <div>
       <BoxContainer>
         <MoneyArea
-          title="Dina pengar"
+          title={`${addGenetive(name)} pengar`}
           moneyList={money}
           onMoveMoney={moveMoney(false)}
         />

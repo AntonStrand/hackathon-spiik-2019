@@ -10,7 +10,13 @@ class App extends Component {
     return (
       <div className="App">
         <Appbar />
-        <Route exact path="/" component={SaldoPage} />
+        <Route
+          exact
+          path="/"
+          component={() =>
+            SaldoPage({ childID: 12, name: 'Andreas', amount: 192 })
+          }
+        />
         <Route path="/login" component={LoginPage} />
       </div>
     )
