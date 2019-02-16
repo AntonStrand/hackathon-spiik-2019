@@ -17,13 +17,14 @@ const Row = ({child, onUpdateSaldo, history}) => {
       </div>
       <div><Button
         onClick={()=> {
+          console.log(child._id)
           onUpdateSaldo(child._id, parseInt(amount, 10))
         }}
         variant='contained'>Update saldo</Button></div>
       <div><Button variant='contained'
         onClick={() => history.push({
           pathname: '/',
-          state: {childId: child._id, name: child.name, amount: amount}
+          state: { childId: child._id, name: child.name, amount: amount }
         })} 
       >View wallet</Button></div>
     </div>)
