@@ -27,7 +27,7 @@ We wanted a playful design to appeal to children. That's why we choose vibrant c
 - Database - MLab, NoSQL 
 
 ## Screenshots
-![spening-page](https://raw.githubusercontent.com/AntonStrand/hackathon-spiik-2019/master/screenshots/spending-page.png)
+![spening-page](https://raw.githubusercontent.com/AntonStrand/hackathon-spiik-2019/master/screenshots/wallet-page.png)
 
 ## Members
 [Andreas Johansson](https://github.com/Andreas1990)<br>
