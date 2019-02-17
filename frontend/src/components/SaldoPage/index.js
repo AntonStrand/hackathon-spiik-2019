@@ -27,6 +27,7 @@ const SaldoPage = ({ history, ...props }) => {
   const name = state.name || 'Unknown'
   const amount = state.amount || 100 
   
+
   const [money, setMoney] = useState(convertAmountToMoney(amount))
   const [register, setRegister] = useState([])
   const moveMoney = moveFromRegister => amount => {

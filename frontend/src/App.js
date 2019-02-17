@@ -15,9 +15,6 @@ class App extends Component {
           exact
           path="/"
           component={SaldoPage}
-          // component={() =>
-            // SaldoPage({ childID: 12, name: 'Andreas', amount: 192 })
-          // }
         />
         <Route path="/login" component={LoginPage} />
         <Route path="/admin" component={AdminPage} />
