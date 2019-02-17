@@ -15,7 +15,7 @@ class Appbar extends React.Component {
           </Typography>
           <Link to="/login" style={{ textDecoration: 'none' }}>
             <Button variant="contained" color="secondary">
-              Login/Register
+              Logga in
             </Button>
           </Link>
         </Toolbar>
