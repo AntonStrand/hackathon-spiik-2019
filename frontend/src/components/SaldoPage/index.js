@@ -54,6 +54,12 @@ const SaldoPage = ({ history, ...props }) => {
         />
       </BoxContainer>
       <Button
+        style={{ marginRight: '1em' }}
+        onClick={() => history.push('/admin')}
+      >
+        AVBRYT
+      </Button>
+      <Button
         disabled={!register.length}
         variant="contained"
         color="primary"
