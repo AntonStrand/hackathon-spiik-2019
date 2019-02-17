@@ -23,10 +23,9 @@ const addGenetive = name => (name[name.length - 1] === 's' ? name : name + 's')
 
 const SaldoPage = ({ history, ...props }) => {
   const { state } = props.location
-  const childID = state.childId || 0 
+  const childID = state.childId || 0
   const name = state.name || 'Unknown'
-  const amount = state.amount || 100 
-  
+  const amount = state.amount || 100
 
   const [money, setMoney] = useState(convertAmountToMoney(amount))
   const [register, setRegister] = useState([])
@@ -53,10 +52,7 @@ const SaldoPage = ({ history, ...props }) => {
           onMoveMoney={moveMoney(true)}
         />
       </BoxContainer>
-      <Button
-        style={{ marginRight: '1em' }}
-        onClick={() => history.push('/admin')}
-      >
+      <Button style={{ marginRight: '1em' }} onClick={() => history.push('/')}>
         AVBRYT
       </Button>
       <Button
@@ -66,8 +62,8 @@ const SaldoPage = ({ history, ...props }) => {
         style={{ fontSize: '1.2em' }}
         onClick={() =>
           saveToWallet(childID, amount).fork(
-            () => history.push('/login'), // If error redirect to login
-            () => history.push('/admin') // else redirect to admin page
+            () => history.push('/'), // If error redirect to login
+            () => history.push('/') // else redirect to admin page
           )
         }
       >
