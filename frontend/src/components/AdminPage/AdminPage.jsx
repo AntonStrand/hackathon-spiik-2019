@@ -3,17 +3,17 @@ import { useState } from 'react'
 import Button from '@material-ui/core/Button'
 import TextField from '@material-ui/core/TextField';
 import { withRouter } from 'react-router-dom'
-import { Link } from 'react-router'
+
 const Row = ({child, onUpdateSaldo, history}) => {
   const [amount, setAmount] = useState()
   return (<div style={{ display: 'flex', flexDirection: 'row', marginTop: '28px', justifyContent: 'space-around'}}>
       <div style={{ paddingRight: '20px', fontSize: '1.5em'}}>{child.name}</div>
       <div style={{ fontSize: '1.5em'}}>{child.saldo}</div>
       <div>
-      <TextField
-          onChange={e => setAmount(e.target.value)}
-          placeholder='Amount'
-          style={{width: '80px'}} />
+        <TextField
+            onChange={e => setAmount(e.target.value)}
+            placeholder='Amount'
+            style={{width: '80px'}} />
       </div>
       <div><Button
         onClick={()=> {
@@ -24,14 +24,14 @@ const Row = ({child, onUpdateSaldo, history}) => {
       <div><Button variant='contained'
         onClick={() => history.push({
           pathname: '/',
-          state: { childId: child._id, name: child.name, amount: amount }
+          state: { childId: child._id, name: child.name, amount: child.saldo }
         })} 
       >View wallet</Button></div>
     </div>)
 }
 
-const saveMoney = (id, saldo) => {
-  return window.fetch(`/api/child/${id}`,
+const saveMoney = (id, saldo) => 
+  fetch(`/api/child/${id}`,
     {
       method: 'POST',
       headers: {
@@ -40,12 +40,12 @@ const saveMoney = (id, saldo) => {
       },
       body: JSON.stringify({ saldo: saldo})
     }).catch(e => console.log(e))
-}
 
 const initialData = JSON.parse(`[{"_id":"5c67df1ed3df0b4a3c91580b","name":"Elliot","parentID":"5c6760741e9e740767b27a61","saldo":200,"date":"2019-02-16T09:59:58.023Z","__v":0},{"_id":"5c67e060986e4843848a1459","name":"Colette","parentID":"5c6760741e9e740767b27a61","saldo":0,"date":"2019-02-16T10:05:20.016Z","__v":0}]`)
 
 const AdminPage = props => {
   const [data, setData] = useState(initialData)
+
   const handleUpdateSaldo = (id, saldo) => {
     if (!isNaN(parseInt(saldo, 10))) {
       const child = data.find(d => d._id === id)
