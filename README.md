@@ -27,7 +27,12 @@ We wanted a playful design to appeal to children. That's why we choose vibrant c
 - Database - MLab, NoSQL 
 
 ## Screenshots
+Handle your childrens accounts.
+![admin-page](https://raw.githubusercontent.com/AntonStrand/hackathon-spiik-2019/master/screenshots/admin-page.png)
+
+By clicking the money your child will see how their wallet will be effected.
 ![spening-page](https://raw.githubusercontent.com/AntonStrand/hackathon-spiik-2019/master/screenshots/wallet-page.png)
+
 
 ## Members
 [Andreas Johansson](https://github.com/Andreas1990)<br>
